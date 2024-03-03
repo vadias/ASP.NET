@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AppAuthLesson4.props" />
+</Project>

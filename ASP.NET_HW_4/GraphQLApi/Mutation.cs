@@ -1,0 +1,24 @@
+﻿using AppAuthLesson4.Abstractions;
+using AppAuthLesson4.Contracts.Requests;
+
+namespace AppAuthLesson4.GraphQLApi
+{
+    public class Mutation
+    {
+        private readonly IGraphService _service;
+
+        public Mutation(IGraphService service)
+        {
+            _service = service;
+        }
+
+
+        public async Task<string> Login(UserAuthRequest request)
+            => await _service.Post("https://localhost:7224/registration/login", request);
+
+        public async Task<string> Register(UserAuthRequest request)
+        => await _service.Post("https://localhost:7224/registration/register", request);
+
+
+    }
+}
